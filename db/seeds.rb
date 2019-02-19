@@ -5,3 +5,61 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+categories = Category.create!(
+  [
+    { title: 'Frontend' }, 
+    { title: 'Backend' }, 
+    { title: 'Mobile Development' }
+  ]
+  )
+
+user = User.create!(name: 'Mikhail', email: 'Mikhail@mail.ru')
+
+test1 = Test.create!(
+  title: 'Ruby', 
+  level: 1, 
+  category_id: categories[1].id, 
+  author_id: user.id
+  )
+
+Test.create!(
+  title: 'Ruby 1', 
+  level: 2, 
+  category_id: categories[1].id, 
+  author_id: user.id
+  )
+
+question1 = Question.create!(
+  body: 'What programming language are you studying?', 
+  test_id: test1.id
+  )
+
+question2 = Question.create!(
+  body: 'This programming language belongs to which category?', 
+  test_id: test1.id
+  )
+
+Answer.create!(
+  body_answer: 'Ruby', 
+  correct: 1, 
+  question_id: question1.id
+  )
+
+Answer.create!(
+  body_answer: 'PHP', 
+  correct: 0, 
+  question_id: question1.id
+  )
+
+Answer.create!(
+  body_answer: 'Backend', 
+  correct: 1, 
+  question_id: question2.id
+  )
+
+Answer.create!(
+  body_answer: 'Frontend', 
+  correct: 0, 
+  question_id: question2.id
+  )
