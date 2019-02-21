@@ -27,36 +27,24 @@ tests = Test.create!([
     user_id: user.id }
   ])
 
-question1 = Question.create!(
-  body: 'What programming language are you studying?', 
-  test_id: tests[0].id
-  )
+questions = Question.create!([
+  { body: 'What programming language are you studying?',
+    test_id: tests[0].id },
+  { body: 'This programming language belongs to which category?',
+    test_id: tests[0].id }
+  ])
 
-question2 = Question.create!(
-  body: 'This programming language belongs to which category?', 
-  test_id: tests[0].id
-  )
-
-Answer.create!(
-  body_answer: 'Ruby', 
-  correct: 1, 
-  question_id: question1.id
-  )
-
-Answer.create!(
-  body_answer: 'PHP', 
-  correct: 0, 
-  question_id: question1.id
-  )
-
-Answer.create!(
-  body_answer: 'Backend', 
-  correct: 1, 
-  question_id: question2.id
-  )
-
-Answer.create!(
-  body_answer: 'Frontend', 
-  correct: 0, 
-  question_id: question2.id
-  )
+answers = Answer.create!([
+  { body_answer: 'Ruby', 
+    correct: 1,
+    question_id: questions[0].id },
+  { body_answer: 'PHP',
+    correct: 0,
+    question_id: questions[0].id },
+  { body_answer: 'Backend',
+    correct: 1,
+    question_id: questions[1].id },
+  { body_answer: 'Frontend',
+    correct: 0,
+    question_id: questions[1].id }
+  ])
