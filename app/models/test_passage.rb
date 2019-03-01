@@ -1,2 +1,0 @@
-class TestPassage < ApplicationRecord
-end
