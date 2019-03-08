@@ -7,11 +7,22 @@ class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: "User", foreign_key: :author_id
 
-  def self.select_by_category_title(category_title)
-    joins(:category)
-    .where(categories: { title: category_title })
-    .order(title: :desc)
-    .pluck(:title)
-  end
+  scope :easy, -> { select_by_level(0..1) }
+  scope :medium, -> { select_by_level(2..4) }
+  scope :hard, -> { select_by_level(5..Float::INFINITY) }
 
+  scope :select_by_level, ->(level) { where(level: level) }
+
+  scope :select_by_category, -> (category_title) {
+    joins(:category)
+      .where(categories: { title: category_title })
+      .order(title: :desc) }
+
+  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than: 0 }
+  validates :category, presence: true
+
+  def self.select_by_category_title(category_title)
+    Test.select_by_category(category_title).pluck(:title)
+  end
 end
