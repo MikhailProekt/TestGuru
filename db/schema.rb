@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 2019_03_08_005451) do
   end
 
   create_table "tests", force: :cascade do |t|
-    t.string "title"
-    t.integer "level"
+    t.string "title", null: false
+    t.integer "level", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
