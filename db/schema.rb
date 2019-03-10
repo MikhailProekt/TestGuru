@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_03_08_005451) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "question_id"
-    t.boolean "correct", default: false
+    t.boolean "correct", default: false, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
@@ -36,14 +36,11 @@ ActiveRecord::Schema.define(version: 2019_03_08_005451) do
   end
 
   create_table "tests", force: :cascade do |t|
-    t.string "title", null: false
-    t.integer "level", default: 0, null: false
+    t.string "title"
+    t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "category_id"
-    t.integer "author_id"
-    t.index ["author_id"], name: "index_tests_on_author_id"
-    t.index ["category_id"], name: "index_tests_on_category_id"
+    t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
   end
 
   create_table "tests_users", id: false, force: :cascade do |t|
