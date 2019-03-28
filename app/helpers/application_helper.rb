@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def github_url(author, repo)
-    author+repo
+    "http://github.com/#{author}/#{repo}"
   end
 
 end

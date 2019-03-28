@@ -25,7 +25,6 @@ class TestsController < ApplicationController
   end
 
   def update
-
     if @test.update(test_params)
       redirect_to @test
     else
