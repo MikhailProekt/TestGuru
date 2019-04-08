@@ -36,15 +36,15 @@ questions = Question.create!([
 
 answers = Answer.create!([
   { body_answer: 'Ruby', 
-    correct: 1,
+    correct: true,
     question_id: questions[0].id },
   { body_answer: 'PHP',
-    correct: 0,
+    correct: false,
     question_id: questions[0].id },
   { body_answer: 'Backend',
-    correct: 1,
+    correct: true,
     question_id: questions[1].id },
   { body_answer: 'Frontend',
-    correct: 0,
+    correct: false,
     question_id: questions[1].id }
   ])
