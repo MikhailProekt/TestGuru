@@ -14,17 +14,17 @@ categories = Category.create!(
   ]
   )
 
-user = User.create!(name: 'Mikhail', email: 'Mikhail@mail.ru')
+user = User.create!(name: 'Mikhail', email: 'MProekt@mail.ru')
 
 tests = Test.create!([
   { title: 'Ruby',
     level: 1,
     category_id: categories[1].id,
-    user_id: user.id },
+    author: user },
   { title: 'Ruby 1',
     level: 2,
     category_id: categories[1].id,
-    user_id: user.id }
+    author: user }
   ])
 
 questions = Question.create!([

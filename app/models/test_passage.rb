@@ -27,7 +27,7 @@ class TestPassage < ApplicationRecord
   end
 
    def percent_correct
-    (self.correct_questions*100/questions_count).round
+    (correct_questions * 100 / questions_count).round(2)
   end
 
   private
@@ -37,7 +37,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    if current_question.nil?
+    if current_question.new_record?
       test.questions.first
     else
       test.questions.order(:id).where('id > ?', current_question.id).first
