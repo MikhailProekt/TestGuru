@@ -14,7 +14,7 @@ categories = Category.create!(
   ]
   )
 
-user = User.create!(name: 'Mikhail', email: 'MProekt@mail.ru')
+user = User.create!(email: 'MProekt@mail.ru', password: '123456')
 
 tests = Test.create!([
   { title: 'Ruby',
