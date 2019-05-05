@@ -19,5 +19,6 @@ module TestGuru
     # I18n.available_locales = [:en, :ru]
     config.time_zone = 'Moscow'
     config.i18n.default_locale = :ru
+    config.i18n.available_locales = %i[en ru]
   end
 end

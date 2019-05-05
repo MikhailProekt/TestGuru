@@ -1,13 +1,7 @@
 <p>
-  <%= current_year %>
-   Проект Михаил - программист Ruby on Rails
-   <%= link_to 'TestGuru Github', github_url('MikhailProekt', 'TestGuru'), target: "_blank"%>
+  <%= current_year %> <%= link_to t('.author'), github_url('MikhailProekt', 'TestGuru'), target: "_blank"%> - <%= t('.about_author') %>
 </p>
 
 <p>
-  Программа тестирования по различным темам.
-</p>
-
-<p>
-  Учебный проект в онлайн-школе <%= link_to 'Thinknetica', 'http://www.thinknetica.com', target: "_blank" %>
+  <%= t('.about_project') %> <%= link_to 'Thinknetica', 'http://www.thinknetica.com', target: "_blank" %>
 </p>
