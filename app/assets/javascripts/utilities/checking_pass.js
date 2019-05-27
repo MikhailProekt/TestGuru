@@ -1,7 +1,7 @@
 document.addEventListener('turbolinks:load', function() {
-  var control = document.querySelector('.check-password')
+  var control = document.querySelector('.check-password');
 
-  if (control) { control.addEventListener('input', checkPass) }
+  if (control) { control.addEventListener('input', checkPass) };
 })
 
 function checkPass() {
