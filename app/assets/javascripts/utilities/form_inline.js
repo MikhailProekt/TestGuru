@@ -1,5 +1,4 @@
 document.addEventListener('turbolinks:load', function() {
-//	$('.form-inline-link').on('click', formInlineLinkHandler)
   var controls = document.querySelectorAll('.form-inline-link');
 
   if (controls.length) {
@@ -8,38 +7,26 @@ document.addEventListener('turbolinks:load', function() {
     }
   }
 
-	var errors = document.querySelector('.resource-errors');
+  var errors = document.querySelector('.resource-errors');
 
-	if (errors) {
-		var resourceId = errors.dataset.resourceId;
-		formInLineHandler(resourceId)
-	}
+  if (errors) {
+    var resourceId = errors.dataset.resourceId;
+    formInLineHandler(resourceId)
+  }
 });
 
 function formInLineLinkHandler(event) {
-	event.preventDefault();
+  event.preventDefault();
 
-	var testId = this.dataset.testId;
-	formInLineHandler(testId);
+  var testId = this.dataset.testId;
+  formInLineHandler(testId);
 }
 
 function formInLineHandler(testId) {
-	var link = document.querySelector('.form-inline-link[data-test-id="' + testId + '")]');
+  var link = document.querySelector('.form-inline-link[data-test-id="' + testId + '")]');
   var testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]');
   var formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]');
-//	var $testTitle = $('.test-title[data-test-id="' + testId + '")]');
-//	var $formInline = $('.form-inline[data-test-id="' + testId + '")]');
 
-/*  $formInline.toggle()
-  $testTitle.toggle()
-
-	if ($formInline.is(':visible')) {
-		link.textContent = 'Cancel'
-	} else {
-		link.textContent = 'Edit'
-	}
-}
-*/
   if(formInline) {
     if (formInline.classList.contains('hide')) {
       testTitle.classList.add('hide');
