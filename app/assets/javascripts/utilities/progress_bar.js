@@ -4,4 +4,4 @@ document.addEventListener('turbolinks:load', function() {
     width = elem.dataset.barWidth;
     elem.style.width = width + '%';
   }
-})
+});

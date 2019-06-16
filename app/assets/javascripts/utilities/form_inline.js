@@ -11,7 +11,7 @@ document.addEventListener('turbolinks:load', function() {
 
   if (errors) {
     var resourceId = errors.dataset.resourceId;
-    formInLineHandler(resourceId)
+    formInLineHandler(resourceId);
   }
 });
 
@@ -31,11 +31,11 @@ function formInLineHandler(testId) {
     if (formInline.classList.contains('hide')) {
       testTitle.classList.add('hide');
       formInline.classList.remove('hide');
-      link.textContent = 'Cancel'
+      link.textContent = 'Cancel';
     } else {
-      testTitle.classList.remove('hide');
+    	testTitle.classList.remove('hide');
       formInline.classList.add('hide');
-      link.textContent = 'Edit'
+      link.textContent = 'Edit';
     }
   }
 }
