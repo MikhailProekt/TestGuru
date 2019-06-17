@@ -33,7 +33,7 @@ function formInLineHandler(testId) {
       formInline.classList.remove('hide');
       link.textContent = 'Cancel';
     } else {
-    	testTitle.classList.remove('hide');
+      testTitle.classList.remove('hide');
       formInline.classList.add('hide');
       link.textContent = 'Edit';
     }
