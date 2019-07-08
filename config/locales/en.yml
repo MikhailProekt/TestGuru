@@ -93,6 +93,7 @@ en:
       welcome: "Welcome"
       guru: "Guru"
       gists: "Show gists"
+      feedback: "Feedback"
     footer:
       author: "Proekt Mikhail"
       about_author: "Ruby on Rails Programmer"

@@ -104,6 +104,7 @@ ru:
       welcome: "Добро пожаловать"
       guru: "Гуру"
       gists: "Показать Гисты"
+      feedback: "Обратная связь"
     footer:
       author: "Проект Михаил"
       about_author: "Программист Ruby on Rails"
