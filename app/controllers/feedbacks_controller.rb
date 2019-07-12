@@ -1,5 +1,7 @@
 class FeedbacksController < ApplicationController
 
+    respond_to :html
+
   # GET /feedback
   def new
     @feedback = Feedback.new(
@@ -14,6 +16,7 @@ class FeedbacksController < ApplicationController
 
       if @feedback.valid?
       FeedbacksMailer.feedback(@feedback).deliver_now
+      respond_with @feedback, location: root_path
       render :success
       else
         render :new

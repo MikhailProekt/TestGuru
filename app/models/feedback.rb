@@ -7,4 +7,5 @@ class Feedback
   validates :email, presence: true, length: { in: 5..255 }
   validates :subject, presence: true, length: { in: 5..255 }
   validates :message, presence: true
+
 end

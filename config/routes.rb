@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   devise_for :users,
              path: :gurus,
              path_names: { sign_in: :login, sign_out: :logout },
-             controllers: { sessions: 'users/sessions'}
+             controllers: { sessions: 'sessions'}
 
-  # resource :feedback, only: %i[new create]
-  get "feedback", to: "feedbacks#new"
-  post "feedback", to: "feedbacks#create"
+  resources :feedbacks, only: %i[new create]
+#  get "feedback", to: "feedbacks#new"
+#  post "feedback", to: "feedbacks#create"
 
   resources :tests, only: :index do
     post :start, on: :member
