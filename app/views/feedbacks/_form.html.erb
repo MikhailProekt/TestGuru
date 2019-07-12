@@ -1,16 +1,30 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-6">
-    <%= form_with scope: :feedback, url: feedbacks_path, local: true do |form| %>
+    <%= form_with model: [@feedback], url: feedbacks_path, local: true do |form| %>
       <%= render 'shared/errors', resource: @feeedback %>
 
       <p>
-        <%= form.label :title %><br>
-        <%= form.text_field :title, id: :feedback_title %>
+        <% name_str = Feedback.human_attribute_name(:name) %>
+        <%= form.label :name, name_str %><br>
+        <%= form.text_field :name, class: "form-control", placeholder: name_str, "aria-label" => name_str %>
       </p>
 
       <p>
-        <%= form.label :body %><br>
-        <%= form.text_field :body, id: :feedback_body %>
+        <% email_str = Feedback.human_attribute_name(:email) %>
+        <%= form.label :email, email_str %><br>
+        <%= form.text_field :email, class: "form-control", placeholder: email_str, "aria-label" => email_str %>
+      </p>
+
+      <p>
+        <% subject_str = Feedback.human_attribute_name(:subject) %>
+        <%= form.label :subject, subject_str %><br>
+        <%= form.text_field :subject, class: "form-control", placeholder: subject_str, "aria-label" => subject_str %>
+      </p>
+
+      <p>
+        <% message_str = Feedback.human_attribute_name(:message) %>
+        <%= form.label :message, message_str %><br>
+        <%= form.text_field :message, class: "form-control", placeholder: message_str, "aria-label" => message_str %>
       </p>
 
       <p><%= form.submit %></p>

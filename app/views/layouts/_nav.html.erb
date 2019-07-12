@@ -3,12 +3,23 @@
 
   <span class="navbar-text">
     <% if user_signed_in? %>
-      <%= t('.welcome') %>, <b><%=current_user.email %></b> <%= t('guru') %> |
-      <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
-      <%= link_to t('.feedback'), new_feedback_path %>
+
+    <div class="nav-user">
+      <%= "t('.welcome'), #{current_user.email} t('guru') |" %>
+
+      <% if current_user.admin? %>
+      <%= link_to t("admin.control_panel"), admin_tests_path %>
+       | 
+      <%= link_to Feedback.model_name.human, feedback_path %>
+       | 
+      <%= link_to t("devise.sessions.sign_out"), destroy_user_session_path, method: :delete %>
+      <% end %>
+    </div>
+
     <% else %>
-      <%= link_to t('.login'), new_session_path(resource_name) %>
-      <%= link_to t('.signup'), new_registration_path(resource_name) %>
+      <%= link_to t("devise.sessions.new.sign_in"), new_session_path(resource_name) %>
+       | 
+    <%= link_to t("devise.registrations.new.sign_up"), new_registration_path(resource_name) %>
     <% end %>
   </span>
 </nav>

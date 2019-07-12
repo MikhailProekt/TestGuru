@@ -39,6 +39,22 @@ en:
       success: "Gist was successfully created! Link is %{link}"
       failure: "An error occurred while saving gist"
 
+  feedbacks:
+    success:
+      title: "Feedback was successfully created."
+    new:
+      feedback: "New feedback"
+
+  activemodel:
+    models:
+      feedback: "Feedback"
+    attributes:
+      feedback:
+        name: "Name"
+        email: "Email"
+        subject: "Subject"
+        message: "Message"
+
   admin:
     tests:
       index:
