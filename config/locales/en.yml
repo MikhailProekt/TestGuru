@@ -4,6 +4,7 @@ en:
       test:
         create: "Create Test"
         update: "Update Test"
+        delete: "Delete Test"
     label:
       test:
         title: "Title"
@@ -40,20 +41,8 @@ en:
       failure: "An error occurred while saving gist"
 
   feedbacks:
-    success:
-      title: "Feedback was successfully created."
     new:
       feedback: "New feedback"
-
-  activemodel:
-    models:
-      feedback: "Feedback"
-    attributes:
-      feedback:
-        name: "Name"
-        email: "Email"
-        subject: "Subject"
-        message: "Message"
 
   admin:
     tests:

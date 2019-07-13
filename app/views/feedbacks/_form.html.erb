@@ -1,34 +1,21 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-6">
-    <%= form_with model: [@feedback], url: feedbacks_path, local: true do |form| %>
+    <%= form_with scope: :feedback, url: feedbacks_path, local: true do |form| %>
       <%= render 'shared/errors', resource: @feeedback %>
 
       <p>
-        <% name_str = Feedback.human_attribute_name(:name) %>
-        <%= form.label :name, name_str %><br>
-        <%= form.text_field :name, class: "form-control", placeholder: name_str, "aria-label" => name_str %>
+        <%= form.label :title %><br>
+        <%= form.text_field :title, id: :feedback_title %>
       </p>
 
       <p>
-        <% email_str = Feedback.human_attribute_name(:email) %>
-        <%= form.label :email, email_str %><br>
-        <%= form.text_field :email, class: "form-control", placeholder: email_str, "aria-label" => email_str %>
-      </p>
-
-      <p>
-        <% subject_str = Feedback.human_attribute_name(:subject) %>
-        <%= form.label :subject, subject_str %><br>
-        <%= form.text_field :subject, class: "form-control", placeholder: subject_str, "aria-label" => subject_str %>
-      </p>
-
-      <p>
-        <% message_str = Feedback.human_attribute_name(:message) %>
-        <%= form.label :message, message_str %><br>
-        <%= form.text_field :message, class: "form-control", placeholder: message_str, "aria-label" => message_str %>
+        <%= form.label :body %><br>
+        <%= form.text_field :body, id: :feedback_body %>
       </p>
 
       <p><%= form.submit %></p>
 
     <% end %>
+
   </div>
 </div>

@@ -14,33 +14,27 @@ categories = Category.create!(
   ]
   )
 
-# user = User.create!(email: 'MProekt8@mail.ru', 
-#                    password: '123456', 
-#                    confirmed_at: Time.now)
+user = User.create!(email: 'MProekt8@mail.ru', 
+                    password: '123456',
+                    first_name: 'Mikhail',
+                    last_name: 'Proekt', 
+                    confirmed_at: Time.now)
 
-# admin = Admin.create!(email: 'MP8@mail.ru',
-#                      password: '123456',
-#                      first_name: 'Mikhail',
-#                      last_name: 'Proekt',
-#                      confirmed_at: Time.now)
-
-users = User.create!(
-  [
-    { first_name: "Admin", last_name: "Admin", email: ENV['ADMIN_EMAIL'], 
-      password: ENV['ADMIN_PASSWORD'], password_confirmation: ENV['ADMIN_PASSWORD'], 
-      type: "Admin" },
-  ]
-)
+admin = Admin.create!(email: 'MP8@mail.ru',
+                      password: '123456',
+                      first_name: 'Mikhail',
+                      last_name: 'Proekt',
+                      confirmed_at: Time.now)
 
 tests = Test.create!([
   { title: 'Ruby',
     level: 1,
     category_id: categories[1].id,
-    author: users[0] },
+    author_id: user.id },
   { title: 'Ruby 1',
     level: 2,
     category_id: categories[1].id,
-    author: users[0] }
+    author_id: user.id }
   ])
 
 questions = Question.create!([
@@ -50,7 +44,7 @@ questions = Question.create!([
     test_id: tests[0].id }
   ])
 
-answers = Answer.create!([
+Answer.create!([
   { body_answer: 'Ruby', 
     correct: true,
     question_id: questions[0].id },

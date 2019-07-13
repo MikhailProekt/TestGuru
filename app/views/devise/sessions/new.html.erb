@@ -1,6 +1,6 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-4">
-    <h2><%= t('.header') %></h2>
+    <h2>Enter the Guru Gates</h2>
 
     <div class="card border-primary">
       <div class="card-body">
@@ -8,24 +8,24 @@
           <div class="form-group">
             <p>
               <%= f.label :email %>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Enter email' %>
+              <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Enter email" %>
             </p>
 
             <p>
               <%= f.label :password %>
-              <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+              <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
             </p>
 
-          <% if devise_mapping.rememberable? %>
+            <% if devise_mapping.rememberable? -%>
               <div class="form-check">
                 <%= f.label :remember_me, class: 'form-check-label' do %>
                   <%= f.check_box :remember_me, class: 'form-check-input' %>
                   Remember me
-                <% end %>
+                <% end -%>
               </div>
-          <% end %>
+            <% end -%>
 
-            <%= f.submit t('.enter'), class: 'btn btn-primary' %>
+            <%= f.submit "Enter", class: 'btn btn-primary' %>
           </div>
         <% end %>
       </div>
@@ -36,4 +36,3 @@
     </div>
   </div>
 </div>
-

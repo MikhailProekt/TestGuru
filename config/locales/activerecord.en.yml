@@ -6,6 +6,8 @@ en:
     attributes:
       test:
         title: "Title"
+      user:
+        password: "Password"
 
     errors:
       messages:

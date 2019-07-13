@@ -45,20 +45,8 @@ ru:
       failure: "Во время сохранения gist произошла ошибка"
 
   feedbacks:
-    success:
-      title: "Отзыв успешно создан."
     new:
       feedback: "Новый отзыв"
-
-  activemodel:
-    models:
-      feedback: "Отзыв"
-    attributes:
-      feedback:
-        name: "Имя"
-        email: "email"
-        subject: "Тема"
-        message: "Сообщение"
 
   admin:
     tests:

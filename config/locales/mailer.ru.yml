@@ -1,8 +1,0 @@
-ru:
-  tests_mailer:
-    completed_test:
-      subject:        "Вы завершили прохождение TestGuru теста!"
-
-  feedbacks_mailer:
-    feedback:
-      subject_prefix: "Сообщение с TestGuru"
