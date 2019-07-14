@@ -3,12 +3,14 @@ class Admin::TestsController < Admin::BaseController
   before_action :set_tests, only: %i[index update_inline]
   before_action :set_test, only: %i[show edit update destroy update_inline]
 
-  def index; end
+  def index
+    @tests = Test.includes(:category, :author, :questions)
+  end
 
   def show; end
 
   def new
-    @test = Test.new
+    @test = current_user.created_tests.new
   end
 
   def edit; end
@@ -40,6 +42,8 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
+#    @test = TestPassage.find(params[:id])
+#    @test = current_user.created_tests.find(params[:id])
     @test.destroy
 
     redirect_to admin_tests_path, notice: t('.success')
