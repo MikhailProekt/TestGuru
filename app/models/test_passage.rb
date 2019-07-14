@@ -26,7 +26,7 @@ class TestPassage < ApplicationRecord
     percent_correct >= 85
   end
 
-   def percent_correct
+  def percent_correct
     (correct_questions * 100 / questions_count).round(2)
   end
 

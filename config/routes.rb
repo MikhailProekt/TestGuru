@@ -8,8 +8,6 @@ Rails.application.routes.draw do
              controllers: { sessions: 'sessions'}
 
   resources :feedbacks, only: %i[new create]
-#  get "feedback", to: "feedbacks#new"
-#  post "feedback", to: "feedbacks#create"
 
   resources :tests, only: :index do
     post :start, on: :member
