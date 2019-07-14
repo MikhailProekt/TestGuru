@@ -42,8 +42,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
-#    @test = TestPassage.find(params[:id])
-#    @test = current_user.created_tests.find(params[:id])
     @test.destroy
 
     redirect_to admin_tests_path, notice: t('.success')

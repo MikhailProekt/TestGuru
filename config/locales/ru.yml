@@ -70,8 +70,8 @@ ru:
         header: "Редактирование %{title} теста"
       update:
         success: "Тест успешно обновлен."
-      delete:
-        success: "Тест успешно удален."
+      destroy:
+        success: "Тест успешно удалён."
       form_inline:
         submit: "ОК"
 
