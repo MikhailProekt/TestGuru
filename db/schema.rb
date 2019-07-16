@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 2019_05_16_213413) do
   end
 
   create_table "gists", force: :cascade do |t|
-    t.string "url"
-    t.integer "user_id"
-    t.integer "question_id"
+    t.string "url", null: false
+    t.bigint "user_id", null: false
+    t.bigint "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_gists_on_question_id"
@@ -98,4 +98,6 @@ ActiveRecord::Schema.define(version: 2019_05_16_213413) do
     t.index ["type"], name: "index_users_on_type"
   end
 
+  add_foreign_key "gists", "questions"
+  add_foreign_key "gists", "users"
 end

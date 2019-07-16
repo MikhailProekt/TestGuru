@@ -21,9 +21,11 @@
               <%= b.check_box id: "answer_ids_#{b.object.id}" %>
               <%= b.label %>
             </p>
+            <p>
+              <%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %>
+            </p>
           <% end %>
 
-          <p><%= link_to 'Gist guestion', gist_test_passage_path(@test_passage), method: :post %></p>
           <p><%= form.submit t('shared.next'), class: 'btn btn-primary' %></p>
         <% end %>
 

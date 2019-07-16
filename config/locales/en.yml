@@ -37,7 +37,7 @@ en:
       passing_the_test: "Passing the test %{title}"
       question_number_of_questions_counts: "%{question_number} of %{questions_counts}"
     gist:
-      success: "Gist was successfully created! Link is %{link}"
+      success: "<a href='%{link_to}'>Gist</a> was successfully created!"
       failure: "An error occurred while saving gist"
 
   feedbacks:
