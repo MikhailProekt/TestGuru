@@ -1,11 +1,11 @@
 class Feedback
   include ActiveModel::Model
 
-  attr_accessor :title, :body, :user
+  attr_accessor :title, :body, :email
 
-  validates :title, :body, :user, presence: true
+  validates :title, :body, :email, presence: true
 
   def deliver
-    FeedbacksMailer.feedback(@title, @body, @user).deliver_now if valid?
+    FeedbacksMailer.feedback(@title, @body, @email).deliver_now if valid?
   end
 end

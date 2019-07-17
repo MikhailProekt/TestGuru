@@ -1,5 +1,5 @@
 class FeedbacksController < ApplicationController
-  respond_to :html
+  respond_to :html, notice: "Feedback sent!"
 
   def new
     @feedback = Feedback.new
@@ -7,15 +7,16 @@ class FeedbacksController < ApplicationController
 
   def create
     @feedback = Feedback.new(feedback_params)
-    @feedback.user = current_user.email
     @feedback.deliver
-    respond_with @feedback, location: root_path
+    respond_with @feedback do |format|
+      format.html {redirect_to root_path, notice: "Feedback sent!"}
+    end
   end
 
   private
 
   def feedback_params
-    params.require(:feedback).permit(:title, :body)
+    params.require(:feedback).permit(:title, :body, :email)
   end
 
 end

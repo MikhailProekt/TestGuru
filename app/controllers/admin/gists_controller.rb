@@ -1,5 +1,5 @@
-#class Admin::GistsController < Admin::BaseController
-class Admin::GistsController < ApplicationController
+class Admin::GistsController < Admin::BaseController
+#class Admin::GistsController < ApplicationController
 
   before_action :set_admin_gist, only: %i[show]
 

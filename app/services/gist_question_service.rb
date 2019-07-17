@@ -31,7 +31,7 @@ class GistQuestionService
   end
 
   def gist_content
-    [@question.body, *@question.answers.pluck(:body_answer)].join("\n")
+    [@question.body, *@question.answers.pluck(:body_answer)].join('\n')
   end
 
   def default_client

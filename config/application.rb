@@ -22,5 +22,7 @@ module TestGuru
     config.i18n.available_locales = %i[en ru]
 
     config.autoload_paths << "#{Rails.root}/lib/clients"
+    Dotenv::Railtie.load
+    HOSTNAME = ENV['HOSTNAME']
   end
 end

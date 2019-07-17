@@ -1,10 +1,10 @@
 class FeedbacksMailer < ApplicationMailer
+  default to: 'proect24@gmail.com',
+          from: 'notification@testguru22805.com'
 
-  def feedback(title, body, user)
+  def feedback(title, body, email)
     mail(
-#     to: Admin.first.email,
-      to: 'proect24@gmail.com',
-      subject: "Feedback from #{user} with title: #{title}",
+      subject: "Feedback from #{email} with title: #{title}",
       body: body
     )
   end

@@ -36,6 +36,9 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+  <span class="navbar-text">
+    <%= link_to t('.feedback'), new_feedback_path %>
+  </span>
 <% end %>
 
 <%= render "devise/shared/links" %>

@@ -13,6 +13,11 @@
         <%= form.text_field :body, id: :feedback_body %>
       </p>
 
+      <p>
+        <%= form.label :email %><br>
+        <%= form.text_field :email, id: :feedback_email %>
+      </p>
+
       <p><%= form.submit %></p>
 
     <% end %>
