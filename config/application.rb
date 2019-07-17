@@ -5,6 +5,9 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+if ['development', 'test'].include? ENV['RAILS_ENV']
+  Dotenv::Railtie.load
+end
 
 module TestGuru
   class Application < Rails::Application
@@ -22,7 +25,5 @@ module TestGuru
     config.i18n.available_locales = %i[en ru]
 
     config.autoload_paths << "#{Rails.root}/lib/clients"
-    Dotenv::Railtie.load
-    HOSTNAME = ENV['HOSTNAME']
   end
 end
