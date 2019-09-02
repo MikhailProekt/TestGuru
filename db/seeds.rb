@@ -14,7 +14,7 @@ categories = Category.create!(
   ]
   )
 
-user = User.create!(email: 'MProekt8@mail.ru', 
+user = User.create!(email: 'MP@mail.ru', 
                     password: '123456',
                     first_name: 'Mikhail',
                     last_name: 'Proekt', 
@@ -31,9 +31,9 @@ tests = Test.create!([
     level: 1,
     category_id: categories[1].id,
     author_id: user.id },
-  { title: 'Ruby 1',
+  { title: 'HTML',
     level: 2,
-    category_id: categories[1].id,
+    category_id: categories[0].id,
     author_id: user.id }
   ])
 
@@ -58,3 +58,18 @@ Answer.create!([
     correct: false,
     question_id: questions[1].id }
   ])
+
+Badge.create!(title: 'For first successfull try',
+              url: 'https://image.flaticon.com/icons/png/128/1579/1579494.png',
+              rule_name: 'success_first_try',
+              rule_value: '')
+
+Badge.create!(title: 'For first level tests',
+              url: 'https://image.flaticon.com/icons/png/128/1579/1579498.png',
+              rule_name: 'level',
+              rule_value: '1')
+
+Badge.create!(title: 'For successfull backend tests',
+              url: 'https://image.flaticon.com/icons/png/128/1579/1579499.png',
+              rule_name: 'category',
+              rule_value: 'Backend')

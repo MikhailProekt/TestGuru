@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_16_213413) do
+ActiveRecord::Schema.define(version: 2019_09_01_211955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2019_05_16_213413) do
     t.boolean "correct", default: false, null: false
     t.integer "question_id", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "title"
+    t.string "url"
+    t.string "rule_name"
+    t.string "rule_value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -55,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_05_16_213413) do
     t.integer "correct_questions", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "success", default: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"
@@ -70,6 +80,15 @@ ActiveRecord::Schema.define(version: 2019_05_16_213413) do
     t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
+  end
+
+  create_table "user_badges", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_user_badges_on_badge_id"
+    t.index ["user_id"], name: "index_user_badges_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -100,4 +119,6 @@ ActiveRecord::Schema.define(version: 2019_05_16_213413) do
 
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
+  add_foreign_key "user_badges", "badges"
+  add_foreign_key "user_badges", "users"
 end

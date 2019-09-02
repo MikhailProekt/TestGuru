@@ -30,6 +30,11 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: %i[index show]
+
+    resources :badges
   end
+
+  resources :user_badges, only: :index
+  resources :badges, only: :index
 
 end
