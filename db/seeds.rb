@@ -27,7 +27,7 @@ admin = Admin.create!(email: 'MP8@yandex.ru',
                       confirmed_at: Time.now)
 
 tests = Test.create!([
-  { title: 'Ruby',
+  { title: 'Ruby_1',
     level: 1,
     category_id: categories[1].id,
     author_id: user.id },
