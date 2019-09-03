@@ -45,16 +45,16 @@ en:
       feedback: "New feedback"
 
   badges:
-      index:
-        header: "Badges"
-        title: "Title"
-        picture: "Picture"
+    index:
+      header: "Badges"
+      title: "Title"
+      picture: "Picture"
 
-   user_badges:
-      index:
-        header: "My badges"
-        title: "Title"
-        picture: "Picture"
+  user_badges:
+    index:
+      header: "My badges"
+      title: "Title"
+      picture: "Picture"
 
   admin:
     tests:

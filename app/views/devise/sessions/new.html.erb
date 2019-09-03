@@ -16,14 +16,14 @@
               <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
             </p>
 
-            <% if devise_mapping.rememberable? -%>
+            <% if devise_mapping.rememberable? %>
               <div class="form-check">
                 <%= f.label :remember_me, class: 'form-check-label' do %>
                   <%= f.check_box :remember_me, class: 'form-check-input' %>
                   Remember me
-                <% end -%>
+                <% end %>
               </div>
-            <% end -%>
+            <% end %>
 
             <%= f.submit "Enter", class: 'btn btn-primary' %>
           </div>
