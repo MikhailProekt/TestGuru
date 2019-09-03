@@ -14,13 +14,13 @@ categories = Category.create!(
   ]
   )
 
-user = User.create!(email: 'MP@mail.ru', 
+user = User.create!(email: 'MP@yandex.ru', 
                     password: '123456',
                     first_name: 'Mikhail',
                     last_name: 'Proekt', 
                     confirmed_at: Time.now)
 
-admin = Admin.create!(email: 'MP8@mail.ru',
+admin = Admin.create!(email: 'MP8@yandex.ru',
                       password: '123456',
                       first_name: 'Mikhail',
                       last_name: 'Proekt',
